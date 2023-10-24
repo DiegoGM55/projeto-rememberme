@@ -30,6 +30,11 @@
     max-width: 1024px;
     margin: 18px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .checkboxArea{

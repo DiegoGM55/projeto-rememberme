@@ -35,11 +35,13 @@
 	width: 100%;
 	padding: 10px;
 	display: flex;
+	justify-content: space-between;
 	gap: 10px;
 }
 
 .taskBody p {
 	width: 85%;
+	white-space: pre-wrap;
 }
 
 .taskButton {
