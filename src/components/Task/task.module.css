@@ -1,0 +1,61 @@
+.task {
+	width: 100%;
+	border: 1px solid #dddddd;
+	border-radius: 5px;
+}
+
+.taskHeader {
+	width: 100%;
+	display: flex;
+	padding: 10px;
+	gap: 10px;
+}
+
+.public {
+	background-color: #fce5af;
+	padding: 3px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.shareButton {
+	background: transparent;
+	border: none;
+	transition: color 0.2s ease-in-out;
+	transition: transform 0.05s ease-in-out;
+}
+
+.shareButton:hover {
+	cursor: pointer;
+	color: rgb(4, 155, 255);
+    transform: scale(0.9);
+}
+
+.taskBody {
+	width: 100%;
+	padding: 10px;
+	display: flex;
+	gap: 10px;
+}
+
+.taskBody p {
+	width: 85%;
+}
+
+.taskButton {
+	width: 10%;
+	border: none;
+	background-color: transparent;
+	color: #ff0000;
+	cursor: pointer;
+	transition: color 0.2s ease-in-out;
+	transition: transform 0.05s ease-in-out;
+}
+
+.taskButton:hover {
+	color: #000;
+}
+
+.taskButton:active {
+	transform: scale(0.9);
+}

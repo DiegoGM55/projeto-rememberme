@@ -1,0 +1,51 @@
+.container {
+    width: 100%;
+
+}
+
+.content{
+    width: 100%;
+    background-color: #fce5af;
+    display: flex;
+    justify-content: center;
+}
+
+.contentForm {
+	font-size: 1.08em;
+    width: 100%;
+    padding-top: 58px;
+    max-width: 1024px;
+    margin: 10px;
+}
+
+.taskArea{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.taskAreaContainer{
+    max-width: 1024px;
+    margin: 18px;
+    width: 100%;
+}
+
+.checkboxArea{
+    margin: 10px 0px;
+}
+
+.checkboxArea label{
+    line-height: 1.08em;
+}
+
+.checkbox{
+	width: 18px;
+    height: 18px;
+    margin: 0px 10px;
+    border-radius: 40px;
+    border: 1px solid #dddddd;
+}
+
+

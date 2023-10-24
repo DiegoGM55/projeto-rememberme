@@ -1,0 +1,77 @@
+.header {
+  background-color: #fce5af;
+  display: flex;
+  justify-content: center;
+  height: 76px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  max-width: 1024px;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.logo {
+  font-size: 1.8rem;
+  padding: 5px 0px 5px 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #002b48;
+  color: #fce5af;
+  position: relative;
+  transition: background-color 0.4s;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.meLogo {
+  background-color: #fce5af;
+  padding: 5px;
+  border-radius: 5px;
+  color: #002b48;
+  margin-left: 5px;
+}
+
+.loginButton {
+  background-color: #002b48;
+  color: #fce5af;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.4s;
+  font-size: 1em;
+}
+
+.loginButton:hover {
+  cursor: pointer;
+  background-color: #003e6b;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu p {
+  margin: 0 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #002b48;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.menu p:hover {
+  cursor: pointer;
+  background-color: #003e6b;
+  color: #fce5af;
+}
