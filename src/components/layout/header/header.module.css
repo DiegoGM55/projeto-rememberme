@@ -8,6 +8,7 @@
 .nav {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
   padding: 0 20px;
   max-width: 1024px;
@@ -74,4 +75,25 @@
   cursor: pointer;
   background-color: #003e6b;
   color: #fce5af;
+}
+
+@media  screen and (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu{
+    flex-direction: column;
+    background-color: #002b48;
+  }
+  .menu p{
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    width: 410px;
+  }
+  .loginButton{
+    background-color: #002b48;
+  }
 }

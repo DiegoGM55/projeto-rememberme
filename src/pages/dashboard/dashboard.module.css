@@ -1,6 +1,5 @@
 .container {
     width: 100%;
-
 }
 
 .content{
@@ -28,13 +27,13 @@
 
 .taskAreaContainer{
     max-width: 1024px;
-    margin: 18px;
+    margin-top: 30px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 .checkboxArea{

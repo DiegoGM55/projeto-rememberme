@@ -1,0 +1,93 @@
+.container {
+    width: 100%;
+}
+
+.content{
+    width: 100%;
+    background-color: #fce5af;
+    display: flex;
+    justify-content: center;
+}
+
+.contentTaskDetails{
+    max-width: 1024px;
+    width: 100%;
+    margin-top: 58px;
+    margin-bottom: 30px;
+    margin-inline: 18px;
+}
+
+.taskHeader{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.taskHeader p{
+    font-size: 1em;
+    font-style: italic;
+}
+
+.task {
+	font-size: 1.08em;
+    width: 100%;
+    padding-top: 20px;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.taskText{
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ffffff;
+    white-space: pre-wrap;
+}
+
+.commentArea{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.commentContainer{
+    max-width: 1024px;
+    width: 100%;
+    margin: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formComment textarea{
+    margin-bottom: 15px;
+}
+
+.comments{
+    margin-top: 58px;
+}
+
+.comment{
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.commentHeader{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.commentAuthor {
+    font-weight: bold;
+    background-color: #dddddd;
+    padding: 2px 4px;
+    border-radius: 5px;
+}

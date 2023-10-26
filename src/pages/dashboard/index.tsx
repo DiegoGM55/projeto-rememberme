@@ -6,9 +6,9 @@ import { getSession } from "next-auth/react";
 import Textarea from "@/components/textarea/Textarea";
 import Button from "@/components/button/Button";
 import Task from "@/components/Task/Task";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 
-import { db } from "@/services/firebasConnection";
+import { db } from "@/services/firebaseConnection";
 
 import {
 	addDoc,
@@ -129,6 +129,7 @@ export default function Dashboard({ user }: DashboardProps) {
 						{tasks.map((task) => (
 							<Task
 								key={task.id}
+								id={task.id}
 								task={task.task}
 								publicTask={task.publicTask}
 								user={task.user}

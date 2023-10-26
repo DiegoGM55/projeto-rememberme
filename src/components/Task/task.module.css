@@ -32,26 +32,30 @@
 }
 
 .taskBody {
-	width: 100%;
-	padding: 10px;
+	width: 98%;
+	margin: 10px;
 	display: flex;
-	justify-content: space-between;
 	gap: 10px;
+	justify-content: space-between;
 }
 
 .taskBody p {
-	width: 85%;
 	white-space: pre-wrap;
 }
 
+.taskBody a{
+	text-decoration: none;
+	color: #000;
+}
+
 .taskButton {
-	width: 10%;
 	border: none;
 	background-color: transparent;
 	color: #ff0000;
 	cursor: pointer;
 	transition: color 0.2s ease-in-out;
 	transition: transform 0.05s ease-in-out;
+	margin: 0px 10px;
 }
 
 .taskButton:hover {
