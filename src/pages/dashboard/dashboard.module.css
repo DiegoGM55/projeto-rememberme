@@ -17,6 +17,10 @@
     margin: 10px;
 }
 
+.contentForm textarea{
+    margin-top: 20px;
+}
+
 .taskArea{
     width: 100%;
     display: flex;

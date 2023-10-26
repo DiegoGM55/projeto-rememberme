@@ -4,10 +4,20 @@ import { GetServerSideProps } from "next";
 
 import { db } from "@/services/firebaseConnection";
 
-import { doc, getDoc, collection, query, where } from "firebase/firestore";
+import {
+	doc,
+	getDoc,
+	collection,
+	query,
+	where,
+	addDoc,
+	onSnapshot,
+} from "firebase/firestore";
 import Textarea from "@/components/textarea/Textarea";
 import Button from "@/components/button/Button";
-import { getSession } from "next-auth/react";
+import Comment from "@/components/comment/Comment";
+import { useSession } from "next-auth/react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
 interface taskProps {
 	taskDetails: {
@@ -19,7 +29,72 @@ interface taskProps {
 	};
 }
 
+interface commentProps {
+	id: string;
+	comment: string;
+	user: string;
+	name: string;
+	taskId: string;
+	createdAt: Date;
+}
+
 const TaskPage = ({ taskDetails }: taskProps) => {
+	const { data: session } = useSession();
+
+	const [inputComment, setInputComment] = useState("");
+	const [comments, setComments] = useState<commentProps[]>([]);
+
+	useEffect(() => {
+		async function getComments() {
+			const comments = await collection(db, "comments");
+			const q = query(comments, where("taskId", "==", taskDetails.id));
+
+			onSnapshot(q, (snapshot) => {
+				let listComments = [] as commentProps[];
+
+				snapshot.forEach((doc) => {
+					listComments.push({
+						id: doc.id,
+						comment: doc.data().comment,
+						user: doc.data().user,
+						name: doc.data().name,
+						taskId: doc.data().taskId,
+						createdAt: doc.data().createdAt.toDate(),
+					});
+				});
+
+				setComments(listComments);
+			});
+		}
+
+		getComments();
+	}, [taskDetails.id]);
+
+	const handleInputComment = (event: ChangeEvent<HTMLTextAreaElement>) => {
+		setInputComment(event.target.value);
+	};
+
+	const handleComment = async (e: FormEvent) => {
+		e.preventDefault();
+
+		if (!session?.user) {
+			return;
+		}
+
+		try {
+			const docRef = await addDoc(collection(db, "comments"), {
+				comment: inputComment,
+				user: session?.user.email,
+				name: session?.user.name,
+				taskId: taskDetails.id,
+				createdAt: new Date(),
+			});
+
+			setInputComment("");
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	return (
 		<div className={styles.container}>
@@ -45,20 +120,33 @@ const TaskPage = ({ taskDetails }: taskProps) => {
 				<section className={styles.commentArea}>
 					<div className={styles.commentContainer}>
 						<h2>Deixe seu comentário</h2>
-						<form className={styles.formComment}>
-							<Textarea placeholder="Comente aqui" />
-							<Button value="Comentar" />
+						<form className={styles.formComment} onSubmit={handleComment}>
+							<Textarea
+								value={inputComment}
+								onChange={handleInputComment}
+								placeholder="Comente aqui"
+								required
+							/>
+							<Button
+								type="submit"
+								value="Comentar"
+								disabled={!session?.user}
+							/>
 						</form>
-                        <div className={styles.comments}>
-                            <h2>Todos os comentários</h2>
-                            <div className={styles.comment}>
-                                <div className={styles.commentHeader}>
-                                    <p className={styles.commentAuthor}>Usuário</p>
-                                    <p>00/00/0000</p>
-                                </div>
-                                <p className={styles.commentText}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, voluptatem.</p>
-                            </div>
-                        </div>
+						<div className={styles.comments}>
+							<h2>Todos os comentários</h2>
+							{comments.map((comment) => (
+								<Comment
+									key={comment.id}
+									id={comment.id}
+									comment={comment.comment}
+									user={comment.user}
+									name={comment.name}
+									taskId={comment.taskId}
+									createdAt={comment.createdAt.toLocaleString()}
+								/>
+							))}
+						</div>
 					</div>
 				</section>
 			</main>
@@ -68,8 +156,7 @@ const TaskPage = ({ taskDetails }: taskProps) => {
 
 export default TaskPage;
 
-export const getServerSideProps: GetServerSideProps = async ({ params, req }) => {
-    const session = await getSession({ req });
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 	const id = params?.id as string;
 
 	const docRef = doc(db, "tasks", id);

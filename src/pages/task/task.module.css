@@ -69,25 +69,3 @@
     margin-top: 58px;
 }
 
-.comment{
-    margin-top: 20px;
-    width: 100%;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.commentHeader{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-}
-
-.commentAuthor {
-    font-weight: bold;
-    background-color: #dddddd;
-    padding: 2px 4px;
-    border-radius: 5px;
-}
