@@ -12,6 +12,7 @@ import {
 	where,
 	addDoc,
 	onSnapshot,
+	orderBy,
 } from "firebase/firestore";
 import Textarea from "@/components/textarea/Textarea";
 import Button from "@/components/button/Button";
@@ -47,7 +48,7 @@ const TaskPage = ({ taskDetails }: taskProps) => {
 	useEffect(() => {
 		async function getComments() {
 			const comments = await collection(db, "comments");
-			const q = query(comments, where("taskId", "==", taskDetails.id));
+			const q = query(comments, where("taskId", "==", taskDetails.id) );
 
 			onSnapshot(q, (snapshot) => {
 				let listComments = [] as commentProps[];
@@ -135,6 +136,10 @@ const TaskPage = ({ taskDetails }: taskProps) => {
 						</form>
 						<div className={styles.comments}>
 							<h2>Todos os comentários</h2>
+							{comments.length === 0 && (
+								<p className={styles.noComments}>Nenhum comentário</p>
+							)}
+
 							{comments.map((comment) => (
 								<Comment
 									key={comment.id}

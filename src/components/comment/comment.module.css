@@ -20,3 +20,27 @@
     padding: 2px 4px;
     border-radius: 5px;
 }
+
+.commentUser{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.commentName{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.commentDeleteButton{
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.comment:hover .commentDeleteButton{
+    display: block;
+    color: red;
+}
