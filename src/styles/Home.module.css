@@ -1,64 +1,64 @@
 .container{
-  background: #fce5af;
-  width: 100%;
-  height: calc(100vh - 76px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.bannerContent{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-}
-
-.title{
-  text-align: center;
-  color: #002b48;
-  margin: 28 px;
-  line-height: 150%;
-  letter-spacing: -0.8px;
-}
-
-.infoContent{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.info{
-  margin: 20px;
-  background-color: #002b48;
-  color: white;
-  border-radius: 5px;
-  padding: 15px 40px;
-  font-weight: bold;
-  width: 150px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.info:hover{
-  background-color: #003e6b;
-  transform: scale(1.1);
-}
-
-@media screen and (max-width: 580px) {
-  .infoContent{
+    background: #fce5af;
+    width: 100%;
+    height: calc(100vh - 76px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
   }
+  
+  .bannerContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  
   .title{
-    font-size: 1.5rem;
+    text-align: center;
+    color: #002b48;
+    margin: 28 px;
+    line-height: 150%;
+    letter-spacing: -0.8px;
   }
-  .banner{
-    width: 80%;
-    object-fit: contain;
+  
+  .infoContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+  
   .info{
-    margin: 10px;
+    margin: 20px;
+    background-color: #002b48;
+    color: white;
+    border-radius: 5px;
+    padding: 15px 40px;
+    font-weight: bold;
+    width: 150px;
+    text-align: center;
+    transition: 0.3s;
   }
-}
+  
+  .info:hover{
+    background-color: #003e6b;
+    transform: scale(1.1);
+  }
+  
+  @media screen and (max-width: 580px) {
+    .infoContent{
+      flex-direction: column;
+    }
+    .title{
+      font-size: 1.5rem;
+    }
+    .banner{
+      width: 80%;
+      object-fit: contain;
+    }
+    .info{
+      margin: 10px;
+    }
+  }

@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "@/styles/home.module.css";
+import styles from "@/styles/Home.module.css";
 
 import home from "../../public/assets/home.jpg";
 
