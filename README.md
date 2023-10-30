@@ -1,40 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Este é um projeto de anotação de tarefas criado usando Next.js, NextAuth e Firebase. É uma aplicação web que permite aos usuários registrar e gerenciar suas tarefas de forma eficiente. O Next.js é usado para a renderização do lado do servidor, garantindo um desempenho rápido e uma experiência de usuário responsiva. A autenticação segura é implementada com o NextAuth, e o Firebase é o banco de dados utilizado para armazenar as tarefas de forma confiável.
 
-## Getting Started
+Recursos Principais:
 
-First, run the development server:
+-Criação, edição e exclusão de tarefas.
+-Autenticação segura com NextAuth para proteger os dados do usuário.
+-Armazenamento seguro de tarefas no Firebase.
+-Funcionalidade de compartilhamento de tarefas para colaboração.
+-Notificações personalizadas para lembretes.
+-Personalização da interface de usuário com opções de temas e cores.
+-Acesso multiplataforma a partir de dispositivos desktop, tablet e smartphone.
+-Relatórios de progresso com estatísticas sobre tarefas concluídas.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Instruções de Uso:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-Clone o repositório para o seu ambiente de desenvolvimento.
+-Instale as dependências usando 'npm install' ou 'yarn'.
+-Configure as credenciais do Firebase e do NextAuth conforme necessário.
+-Inicie o aplicativo com 'npm run dev' ou 'yarn dev'.
+-Comece a criar, gerenciar e organizar suas tarefas!
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Espero que esta descrição seja útil para o seu projeto no Git. Certifique-se de personalizá-la conforme necessário e de incluir todas as informações relevantes para os desenvolvedores interessados em contribuir ou utilizar o projeto.
