@@ -29,5 +29,3 @@ Instruções de Uso:
 -Inicie o aplicativo com 'npm run dev' ou 'yarn dev'.
 
 -Comece a criar, gerenciar e organizar suas tarefas!
-
-Espero que esta descrição seja útil para o seu projeto no Git. Certifique-se de personalizá-la conforme necessário e de incluir todas as informações relevantes para os desenvolvedores interessados em contribuir ou utilizar o projeto.
